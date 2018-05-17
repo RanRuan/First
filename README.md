@@ -19,7 +19,9 @@
 4. git commit -am 'dd' => git push 
 // 用于提交跟踪过的文件[modified]
 // 如果只是改变文件的内容，直接使用该条命令
-
+5. git status
+// git add,git commit这些状态使用git status命令即可查看状态
+6. git log // 查看日志
 
 ## 与主干同步
 1. git fetch origin
@@ -41,4 +43,33 @@ exec：执行其他shell命令
 // 强行推送到远程仓库
 ## 发出pull request 
     @ githup @gitlab
+
+2. git fetch origin master
+//从远程分支获取最新版本但不会merge
+
+2. git pull origin master
+//从远程分支获取最新版本并merge到本地
+
+3. git remote add origin git@github.com:Wbiokr/chatApp.git
+//添加远程库chatApp.git
+
+4. git push - u origin master 
+//第一次推送本地仓库到远程仓库
+
+5. git push origin master
+//之后的推送
+
+
+## 分支操作
+1. git checkout ‘当前分支’
+2. git merge b
+// 将b分支合并到当前分支
+
+
+## 版本控制
+git reset --hard HEAD^ //仓库文件回退到上一commit版本
+
+git reset --hard 35f69c //版本回滚到hash值35f69c开头的commit版本
+
+git reset HEAD a.txt //把暂存区中a.txt的修改撤销掉，放回工作区
 
