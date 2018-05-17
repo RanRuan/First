@@ -25,7 +25,7 @@
 // 强行推送到远程仓库对应分支上
 - 发出pull request 
     @ githup @gitlab
-    
+
 2. git fetch origin master
 //从远程分支获取最新版本但不会merge
 
@@ -50,6 +50,13 @@
 // 将b分支合并到当前分支
 4. git branch
 // 查看当前处在什么分支上
+5. git branch -a 
+// 查看所有分支，包括远程
+6. git branch -D ran
+// 删除本地的ran分支
+7. git branch -r -d origin/ran
+// 只是删除远程分支的本地的索引，
+8. 真正删除是 git push origin :ran
 
 ## 查看
 4. git status
@@ -62,19 +69,10 @@
 
 ## 合并commit 
 1. git rebase -i origin/master
-```
-pick：正常选中
-reword：选中，并且修改提交信息；
-edit：选中，rebase时会暂停，允许你修改这个commit（参考这里）
-squash：选中，会将当前commit与上一个commit合并
-fixup：与squash相同，但不会保存当前commit的提交信息
-exec：执行其他shell命令
-```
+// 当分支上存在很多版本的commit 需要合并成一个提交到远程仓库
 
 ## 版本控制
 git reset --hard HEAD^ //仓库文件回退到上一commit版本
-
 git reset --hard 35f69c //版本回滚到hash值35f69c开头的commit版本
-
 git reset HEAD a.txt //把暂存区中a.txt的修改撤销掉，放回工作区
 
