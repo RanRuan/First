@@ -69,7 +69,7 @@
 
 ## 合并commit 
 1. git rebase -i origin/master
-// 当分支上存在很多版本的commit 需要合并成一个提交到远程仓库
+// 当分支上存在很多版本的commit 需要合并成一个 提交到远程仓库
 
 ## 版本控制
 git reset --hard HEAD^ //仓库文件回退到上一commit版本
