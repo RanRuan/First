@@ -23,9 +23,9 @@
 ## 远程仓库
 1. git push --force origin ‘branch name’
 // 强行推送到远程仓库对应分支上
-## 发出pull request 
+- 发出pull request 
     @ githup @gitlab
-
+    
 2. git fetch origin master
 //从远程分支获取最新版本但不会merge
 
