@@ -119,3 +119,21 @@
   - .git/objects/pack/pack-c71fc510f75681633288d462c6c70f1cd981c241.pack
 
   
+## 引用规格 .git/config 
+  - $ git remote add origin https://github.com/schacon/simplegit-progit
+  - 上述命令会在你的 .git/config 文件中添加一个小节，并在其中指定远程版本库的名称（origin）、URL 和一个用于获取操作的引用规格（refspec）：
+  ```
+    [remote "origin"]
+    url = https://github.com/schacon/simplegit-progit
+    fetch = +refs/heads/*:refs/remotes/origin/*     // git fetch 的引用规格
+  ```
+  - 用规格的格式由一个可选的 + 号和紧随其后的 <src>:<dst> 组成，其中 <src> 是一个模式（pattern），代表远程版本库中的引用；<dst> 是那些远程引用在本地所对应的位置。
+  - 引用规格由 git remote add 命令自动生成， Git 获取服务器中 refs/heads/ 下面的所有引用，并将它写入到本地的 refs/remotes/origin/ 中。
+
+  1. 引用规格推送
+    - 如何将QA团队的master分支推送到远程服务器qa/master分支上
+    - > git push origin master:refs/heads/qa/master
+
+## 删除引用 - 远程
+  1.git push origin  : qa/master
+  2.git push origin --delete qa-master
