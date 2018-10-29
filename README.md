@@ -5,21 +5,26 @@
 3.git保证完整性(Git 数据库中保存的信息都是以文件内容的哈希值来索引)
 4.git一般只添加数据，git绝大部分的操作都是可逆的
 
-## 三种状态
+## GIT 初始化
 
-1. 已提交：committed  => 已安全提交到本地数据库
-2. 已修改：modified  => 修改了文件，未保存到本地数据库中
-3. 已暂存：staged  => 对已修改的文件做了版本标记，使之包含在下次提交快照里 
+  - $ git --version 查看你当前安装的git 版本
 
-## 三个区域
+## 初次运行 Git 前的配置
 
-- 工作目录 =>              暂存区域 =>          git仓库目录
-- Working Directory  ==> Staging Area  ==> .git directory (Respository)
-- (修改文件)  git add/commit (文件快照放入暂存区) git push => 入仓
+1. git config 是git自带的工具，帮助设置控制Git外观和行为的配置变量，存储在三个地方：
+  - /etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果使用带有 --system 选项的 git config 时，它会从此文件读写配置变量。
+  - ~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 可以传递 --global 选项让 Git 读写此文件。
+  - 当前使用仓库的 Git 目录中的 config 文件（就是 .git/config）：针对该仓库。
 
-- 工作目录是对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。
-- 暂存区域是一个文件，保存了下次将提交的文件列表信息，一般在 Git 仓库目录中。 有时候也被称作‘索引’，不过一般说法还是叫暂存区域。
-- Git 仓库目录是 Git 用来保存项目的元数据和对象数据库的地方，从其它计算机克隆仓库时，拷贝的就是这里的数据。
+2. 用户信息，告诉git 你是谁？
+  - $ git config --global user.name "ruanyuan";
+  - $ git config --global user.email ikissweb@163.com;
+  - git config --list 查询你做了哪些配置;
+
+
+3. 在现有目录中初始化仓库：
+  - 打算使用 Git 来对现有的项目进行管理，只需要进入该项目目录并输入：git init 将创建.git子目录;
+  - .git目录下含有你初始化的git仓库中所有的文件，这些文件是Git仓库的骨干，但是项目文件未被跟踪;
 
 ## git内部原理
 
